@@ -1,0 +1,91 @@
+import java.util.*;
+
+class play1
+{
+	public static void menu(boolean flag)
+	{
+		int pl=0;
+		if(flag)
+		{
+			System.out.println("1.Create a playList");
+			System.out.println("2.Create a playList");
+		}
+		while(flag)
+		{
+			System.out.println("Select an option/press 9 to go back/0 to terminate");
+		
+			Scanner s=new Scanner(System.in);
+			pl=s.nextInt();
+
+			switch(pl)
+			{
+				case 1:
+					ArrayList playList=new ArrayList(createPlaylist());
+					break;
+
+				case 9:
+					flag=false;
+					MainMenu.mm(true);
+					break;
+
+				case 0:
+					flag=false;
+					MainMenu.mm(false);
+					break;
+
+				default:
+					System.out.println("Invalid Option");
+			}
+			
+		}
+	}
+
+	public static ArrayList createPlaylist()
+	{
+		int opt=0;
+		String songName="";
+		ArrayList al=new ArrayList();	
+		Boolean b=true;
+
+		while(b)
+		{
+			System.out.println("Press 1 to add song,2 to remove song,3 to save playlist,9 to go back,0 to terminate");
+			Scanner s=new Scanner(System.in);
+			opt=s.nextInt();
+
+			switch(opt)
+			{
+				case 1:
+					System.out.println("Enter song to add");
+					songName=s.nextLine();			
+					al.add(songName);
+					break;
+					
+				case 2:
+					System.out.println("Enter song to remove");
+					songName=s.nextLine();			
+					al.remove(songName);
+					break;
+
+				case 3:
+					break;
+				
+				case 9:
+					b=false;
+					menu(true);
+					break;
+
+				case 0:
+					b=false;
+					menu(false);
+					break;c
+
+				default:
+					System.out.println("Invalid option");
+			}
+		}
+		return al;
+	}
+
+}
+

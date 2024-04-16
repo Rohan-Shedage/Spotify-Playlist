@@ -1,0 +1,53 @@
+import java.util.*;
+
+class Spotify 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("SPOTIFY");
+		loginPage(true);
+	}
+	public static void loginPage(Boolean flag)
+	{
+		int lo_si=0;
+		
+		if(flag)
+		{
+			System.out.println("1.LogIn");
+			System.out.println("2.SignUp");
+			System.out.println("3.Login as a guest");
+		}
+		
+		while(flag)
+		{
+			System.out.println("Select an option or press 0 to terminate");
+			
+			Scanner s=new Scanner(System.in);
+			lo_si=s.nextInt();
+
+			switch(lo_si)
+			{
+				case 1:
+					flag=false;
+					break;
+
+				case 2:
+					flag=false;
+					break;
+
+				case 3:
+					flag=false;
+					MainMenu.mm(true);
+					break;
+
+				case 0:
+					return;
+
+				default:
+					System.out.println("Invalid Option");
+			}
+
+		}
+	}
+
+}

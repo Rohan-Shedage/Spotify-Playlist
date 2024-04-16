@@ -1,0 +1,50 @@
+import java.util.*;
+
+class MainMenu 
+{
+	public static void mm(boolean flag)
+	{
+		int ar_pl=0;
+		
+		if(flag)
+		{
+			System.out.println("1.Artists");
+			System.out.println("2.PlayLists");
+		}
+
+		while(flag)
+		{
+			System.out.println("Select an option/press 9 to go back/0 to terminate");
+			
+			Scanner s=new Scanner(System.in);
+			ar_pl=s.nextInt();
+
+			switch(ar_pl)
+			{
+				case 1:
+					flag=false;
+					Artists.menu(true);
+					break;
+
+				case 2:
+					flag=false;
+					playlists.menu(true);
+					break;
+
+				case 9:
+					flag=false;
+					Spotify.loginPage(true);
+					break;
+
+				case 0:
+					flag=false;
+					Spotify.loginPage(false);
+					break;
+
+				default:
+					System.out.println("Invalid Option");
+			}
+
+		}
+	}
+}
